@@ -10,6 +10,4 @@ public class musakuview {
     public void showAddpemasukan(){
 
     }
-
-
 }
