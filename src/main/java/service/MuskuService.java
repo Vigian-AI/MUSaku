@@ -1,6 +1,6 @@
 package service;
 
-public interface muskuService {
+public interface MuskuService {
     void addPemasukan();
     void addPengeluaran();
     void showLaoran();

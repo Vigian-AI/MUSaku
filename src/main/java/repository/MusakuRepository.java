@@ -4,7 +4,7 @@ import entity.Musaku;
 
 import java.util.List;
 
-public interface musakuRepository {
+public interface MusakuRepository {
     List<Musaku> getAll();
     void add(Musaku musaku);
 }
