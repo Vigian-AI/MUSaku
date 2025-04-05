@@ -1,6 +1,6 @@
-package repository;
+package Vigian.Musaku.repository;
 
-import entity.Musaku;
+import Vigian.Musaku.entity.Musaku;
 
 import java.util.List;
 

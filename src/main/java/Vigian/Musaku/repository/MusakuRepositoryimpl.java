@@ -1,6 +1,4 @@
-package repository;
-
-import entity.Musaku;
+package Vigian.Musaku.repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,12 +8,12 @@ public class MusakuRepositoryimpl implements MusakuRepository{
 
 
     @Override
-    public List<entity.Musaku> getAll() {
+    public List<Vigian.Musaku.entity.Musaku> getAll() {
         return List.of();
     }
 
     @Override
-    public void add(entity.Musaku musaku) {
+    public void add(Vigian.Musaku.entity.Musaku musaku) {
 
     }
 }

@@ -1,7 +1,7 @@
-package service;
+package Vigian.Musaku.service;
 
 public interface MuskuService {
     void addPemasukan();
     void addPengeluaran();
-    void showLaoran();
+    void showLaporan();
 }

@@ -1,4 +1,4 @@
-package entity;
+package Vigian.Musaku.entity;
 
 public class Musaku {
     private String tipe;
