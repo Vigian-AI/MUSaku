@@ -1,6 +1,15 @@
 package Vigian.Musaku.service;
 
+import Vigian.Musaku.entity.Musaku;
+import Vigian.Musaku.repository.MusakuRepository;
+import Vigian.Musaku.repository.MusakuRepositoryimpl;
+
+
+import java.util.List;
+
+
 public class MusakuServiceimpl implements MuskuService{
+    private MusakuRepository musakuRepository = new MusakuRepositoryimpl();
     private int pemasukan, pengeluaran;
     private int totalPemasukan, totalPengeluaran;
     private int saldo;
@@ -36,7 +45,6 @@ public class MusakuServiceimpl implements MuskuService{
             if (saldo >= pengeluaran && pengeluaran <= batasPengeluaran) {
                 saldo -= pengeluaran;
 
-                KeteranganPengeluaran.add(nomer +". "+ " Rp " + pengeluaran+" untuk "+ ketpengeluran);
                 totalPengeluaran += pengeluaran;
                 System.out.println("Pengeluaran sebesar " + pengeluaran + " berhasil dicatat.");
                 System.out.println("Sisa saldo: " + saldo);
@@ -51,7 +59,14 @@ public class MusakuServiceimpl implements MuskuService{
     }
 
     @Override
-    public void showLaporan() {
+    public void showLaporan(){
 
+        System.out.println("\n___ Laporan ___");
+        System.out.println("Saldo saat ini: " + saldo);
+        System.out.println("Total pemasukan: " + totalPemasukan);
+        System.out.println("Total pengeluaran: " + totalPengeluaran);
+        System.out.println("__history pengeluaran__");
+        for (Object s : musakuRepository.getAll()) {
+            System.out.println(s);
     }
-}
+}}

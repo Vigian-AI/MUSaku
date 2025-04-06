@@ -1,19 +1,19 @@
 package Vigian.Musaku.repository;
 
+import Vigian.Musaku.entity.Musaku;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MusakuRepositoryimpl implements MusakuRepository{
-    private ArrayList<String> Musaku = new ArrayList<>();
-
-
+    private List<Musaku> musaku = new ArrayList<>();
     @Override
-    public List<Vigian.Musaku.entity.Musaku> getAll() {
-        return List.of();
+    public List<Musaku> getAll() {
+        return musaku;
     }
 
     @Override
-    public void add(Vigian.Musaku.entity.Musaku musaku) {
+    public void add(Musaku musaku) {
 
     }
 }
