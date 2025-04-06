@@ -1,11 +1,9 @@
 package Vigian.Musaku.service;
-
-import Vigian.Musaku.entity.Musaku;
 import Vigian.Musaku.repository.MusakuRepository;
 import Vigian.Musaku.repository.MusakuRepositoryimpl;
 
 
-import java.util.List;
+
 
 
 public class MusakuServiceimpl implements MuskuService{
@@ -17,8 +15,6 @@ public class MusakuServiceimpl implements MuskuService{
 
     @Override
     public void addPemasukan() {
-        System.out.print("Masukkan jumlah pemasukan uang saku: ");
-
         if (pemasukan > 0) {
             saldo += pemasukan;
             totalPemasukan += pemasukan;
@@ -30,16 +26,6 @@ public class MusakuServiceimpl implements MuskuService{
 
     @Override
     public void addPengeluaran() {
-        System.out.println("masukan keterangan pengeluaran:");
-
-
-        if (ketpengeluran.trim().isEmpty()) {
-            System.out.println("keterangan tidak boleh kosong");
-            return;
-        }
-
-        System.out.print("Masukkan jumlah pengeluaran: ");
-
 
         if (pengeluaran > 0) {
             if (saldo >= pengeluaran && pengeluaran <= batasPengeluaran) {
