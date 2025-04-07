@@ -1,4 +1,5 @@
 package Vigian.Musaku.service;
+import Vigian.Musaku.entity.Musaku;
 import Vigian.Musaku.repository.MusakuRepository;
 import Vigian.Musaku.repository.MusakuRepositoryimpl;
 
@@ -8,31 +9,32 @@ import Vigian.Musaku.repository.MusakuRepositoryimpl;
 
 public class MusakuServiceimpl implements MuskuService{
     private MusakuRepository musakuRepository = new MusakuRepositoryimpl();
-    private int pemasukan, pengeluaran;
-    private int totalPemasukan, totalPengeluaran;
-    private int saldo;
+    private int totalPemasukan=0,
+                totalPengeluaran=0;
+    private int saldo=0;
     private final int batasPengeluaran = 50_000;
 
     @Override
-    public void addPemasukan() {
+    public void addPemasukan(String type, String keterangan,int pemasukan) {
         if (pemasukan > 0) {
             saldo += pemasukan;
             totalPemasukan += pemasukan;
-            System.out.println("Pemasukan berhasil! Saldo saat ini: " + saldo);
+            System.out.println("Pemasukan berhasil! Saldo saat ini: " + saldo+ " dari " +keterangan);
+            musakuRepository.add(new Musaku(type,keterangan,pemasukan));
         } else {
             System.out.println("Pemasukan harus lebih dari 0!");
         }
     }
 
     @Override
-    public void addPengeluaran() {
+    public void addPengeluaran(String type,String keterangan, int pengeluaran) {
 
         if (pengeluaran > 0) {
             if (saldo >= pengeluaran && pengeluaran <= batasPengeluaran) {
                 saldo -= pengeluaran;
-
                 totalPengeluaran += pengeluaran;
-                System.out.println("Pengeluaran sebesar " + pengeluaran + " berhasil dicatat.");
+                System.out.println(type +"sebesar " + pengeluaran + " berhasil dicatat.");
+                musakuRepository.add(new Musaku(type,keterangan,pengeluaran));
                 System.out.println("Sisa saldo: " + saldo);
             } else if (pengeluaran > batasPengeluaran) {
                 System.out.println("Peringatan: Pengeluaran melebihi batas yang ditentukan!");
