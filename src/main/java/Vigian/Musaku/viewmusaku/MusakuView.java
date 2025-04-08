@@ -1,15 +1,22 @@
 package Vigian.Musaku.viewmusaku;
 
-import Vigian.Musaku.service.MuskuService;
+import Vigian.Musaku.service.MusakuService;
 import Vigian.Musaku.util.InputUtil;
 
 
 
 public class MusakuView {
-    private MuskuService musakuService;
-    public MusakuView() {
+    public MusakuView(MusakuService musakuService) {
         this.musakuService = musakuService;
     }
+
+    private MusakuService musakuService;
+
+
+    public MusakuView() {
+
+    }
+
 
     public void showMenu(){
         while (true) {
@@ -18,7 +25,7 @@ public class MusakuView {
             System.out.println("B. Pengeluaran");
             System.out.println("C. Laporan");
             System.out.println("D. Keluar");
-            String pilihan = InputUtil.inputstring("Pilih menu (A/B/C/D): ");
+            String pilihan = InputUtil.inputstring("Pilih menu (A/B/C/D) ");
 
 
             if (pilihan.equalsIgnoreCase("A")) {
@@ -53,8 +60,8 @@ public class MusakuView {
         }
     }
     public void showAddpemasukan(){
-        var ketPemasukan = InputUtil.inputstring("masukan keterangan: ");
-        var pemasukan = InputUtil.inputInt("masukan nilai pemasukan :");
+        String ketPemasukan = InputUtil.inputstring("masukan keterangan: ");
+        int pemasukan = InputUtil.inputInt("masukan nilai pemasukan ");
         musakuService.addPemasukan( "pemasukan",ketPemasukan,pemasukan);
     }
 }

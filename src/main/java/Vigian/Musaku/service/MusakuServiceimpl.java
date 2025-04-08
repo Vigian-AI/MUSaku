@@ -7,7 +7,11 @@ import Vigian.Musaku.repository.MusakuRepositoryimpl;
 
 
 
-public class MusakuServiceimpl implements MuskuService{
+public class MusakuServiceimpl implements MusakuService {
+    public MusakuServiceimpl(MusakuRepository musakuRepository) {
+        this.musakuRepository = musakuRepository;
+    }
+
     private MusakuRepository musakuRepository = new MusakuRepositoryimpl();
     private int totalPemasukan=0,
                 totalPengeluaran=0;
@@ -15,7 +19,7 @@ public class MusakuServiceimpl implements MuskuService{
     private final int batasPengeluaran = 50_000;
 
     @Override
-    public void addPemasukan(String type, String keterangan,int pemasukan) {
+    public void addPemasukan(String type, String keterangan, int pemasukan) {
         if (pemasukan > 0) {
             saldo += pemasukan;
             totalPemasukan += pemasukan;
