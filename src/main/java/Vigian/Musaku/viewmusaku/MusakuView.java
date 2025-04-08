@@ -32,7 +32,7 @@ public class MusakuView {
                 showAddpemasukan();
             }
             else if (pilihan.equalsIgnoreCase("B")) {
-               showAddpemasukan();
+               showAddpengeluaran();
             }
             else if (pilihan.equalsIgnoreCase("C")) {
                 musakuService.showLaporan();
