@@ -56,7 +56,6 @@ public class MusakuView {
         }else {
             var pengeluaran = InputUtil.inputInt("masukan pengeluaran");
             musakuService.addPengeluaran("pengeluaran",ketPengeluaran,pengeluaran);
-
         }
     }
     public void showAddpemasukan(){
