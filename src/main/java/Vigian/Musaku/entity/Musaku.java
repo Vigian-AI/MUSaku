@@ -5,10 +5,12 @@ public class Musaku {
     private String keterangan;
     private Integer Uang;
 
+
+
     public Musaku(String tipe, String keterangan, Integer uang) {
         this.tipe = tipe;
         this.keterangan = keterangan;
-        Uang = uang;
+        this.Uang = uang;
     }
 
     public String getTipe() {
@@ -34,4 +36,10 @@ public class Musaku {
     public void setUang(Integer uang) {
         Uang = uang;
     }
+
+    @Override
+    public String toString() {
+        return "type " + tipe +", keterangan " +keterangan+ ", jumlah "+Uang;
+    }
+
 }

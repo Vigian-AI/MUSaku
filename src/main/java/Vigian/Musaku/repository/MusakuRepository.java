@@ -2,12 +2,12 @@ package Vigian.Musaku.repository;
 
 import Vigian.Musaku.entity.Musaku;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public interface MusakuRepository {
 
 
-    List<Musaku> getAll();
+    ArrayList<Musaku> getAll();
 
     void add(Musaku musaku);
 }

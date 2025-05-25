@@ -15,7 +15,6 @@ public class App {
         MusakuRepository musakuRepository = new MusakuRepositoryimpl();
         MusakuService musakuService =  new MusakuServiceimpl(musakuRepository);
         MusakuView musakuView = new MusakuView(musakuService);
-
         musakuView.showMenu();
     }
 

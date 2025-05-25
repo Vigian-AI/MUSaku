@@ -47,8 +47,7 @@ public class MusakuView {
         }
     }
     public void showAddpengeluaran(){
-        var ketPengeluaran = InputUtil.inputstring("masukan keterangan :");
-
+        var ketPengeluaran = InputUtil.inputstring("masukan keterangan ");
 
         if (ketPengeluaran.trim().isEmpty()) {
             System.out.println("keterangan tidak boleh kosong");

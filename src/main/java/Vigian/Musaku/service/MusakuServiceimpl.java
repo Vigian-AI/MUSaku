@@ -19,26 +19,26 @@ public class MusakuServiceimpl implements MusakuService {
     private final int batasPengeluaran = 50_000;
 
     @Override
-    public void addPemasukan(String type, String keterangan, int pemasukan) {
+    public void addPemasukan(String tipe, String keterangan, int pemasukan) {
         if (pemasukan > 0) {
             saldo += pemasukan;
             totalPemasukan += pemasukan;
             System.out.println("Pemasukan berhasil! Saldo saat ini: " + saldo+ " dari " +keterangan);
-            musakuRepository.add(new Musaku(type,keterangan,pemasukan));
+            musakuRepository.add( new Musaku(tipe,keterangan,pemasukan));
         } else {
             System.out.println("Pemasukan harus lebih dari 0!");
         }
     }
 
     @Override
-    public void addPengeluaran(String type,String keterangan, int pengeluaran) {
+    public void addPengeluaran(String tipe,String keterangan, int pengeluaran) {
 
         if (pengeluaran > 0) {
             if (saldo >= pengeluaran && pengeluaran <= batasPengeluaran) {
                 saldo -= pengeluaran;
                 totalPengeluaran += pengeluaran;
-                System.out.println(type +"sebesar " + pengeluaran + " berhasil dicatat.");
-                musakuRepository.add(new Musaku(type,keterangan,pengeluaran));
+                System.out.println(tipe +"sebesar " + pengeluaran + " berhasil dicatat.");
+                musakuRepository.add(new Musaku(tipe,keterangan,pengeluaran));
                 System.out.println("Sisa saldo: " + saldo);
             } else if (pengeluaran > batasPengeluaran) {
                 System.out.println("Peringatan: Pengeluaran melebihi batas yang ditentukan!");

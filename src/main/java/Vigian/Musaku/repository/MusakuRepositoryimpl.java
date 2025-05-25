@@ -6,15 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MusakuRepositoryimpl implements MusakuRepository{
-    private List<Musaku> musaku = new ArrayList<>();
+    private ArrayList<Musaku> musaku = new ArrayList<>();
     @Override
-    public List<Musaku> getAll() {
+    public ArrayList<Musaku> getAll() {
         return musaku;
     }
 
 
     @Override
     public void add(Musaku musaku) {
-
+        this.musaku.add(musaku);
     }
 }
