@@ -2,17 +2,21 @@ package Vigian.Musaku.util;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import io.github.cdimascio.dotenv.Dotenv;
 
 import java.security.PublicKey;
 
 public class DatabaseUtil {
     private static HikariDataSource hikariDataSource;
-
     static {
+        Dotenv dotenv = Dotenv.load();
+        String pass = dotenv.get("DB_password");
+
+
         HikariConfig config = new HikariConfig();
         config.setDriverClassName("com.mysql.cj.jdbc.Driver");
         config.setUsername("root");
-        config.setPassword("");
+        config.setPassword(pass);
         config.setJdbcUrl("jdbc:mysql://localhost:3306/musaku");
 
         config.setMaximumPoolSize(10);
