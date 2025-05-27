@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public interface MusakuRepository {
 
 
+
     ArrayList<Musaku> getAll();
 
     void add(Musaku musaku);
