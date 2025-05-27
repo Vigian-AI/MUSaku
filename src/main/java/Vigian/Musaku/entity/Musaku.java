@@ -6,35 +6,22 @@ public class Musaku {
     private Integer Uang;
 
 
-
-    public Musaku(String tipe, String keterangan, Integer uang) {
-        this.tipe = tipe;
-        this.keterangan = keterangan;
-        this.Uang = uang;
-    }
-
     public String getTipe() {
         return tipe;
-    }
-
-    public void setTipe(String tipe) {
-        this.tipe = tipe;
     }
 
     public String getKeterangan() {
         return keterangan;
     }
 
-    public void setKeterangan(String keterangan) {
-        this.keterangan = keterangan;
-    }
-
     public Integer getUang() {
         return Uang;
     }
 
-    public void setUang(Integer uang) {
-        Uang = uang;
+    public Musaku(String tipe, String keterangan, Integer uang) {
+        this.tipe = tipe;
+        this.keterangan = keterangan;
+        this.Uang = uang;
     }
 
     @Override
