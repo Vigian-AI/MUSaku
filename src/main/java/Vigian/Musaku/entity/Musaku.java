@@ -6,6 +6,17 @@ public class Musaku {
     private Integer Uang;
 
 
+    public String getTipe() {
+        return tipe;
+    }
+
+    public String getKeterangan() {
+        return keterangan;
+    }
+
+    public Integer getUang() {
+        return Uang;
+    }
 
     public Musaku(String tipe, String keterangan, Integer uang) {
         this.tipe = tipe;
