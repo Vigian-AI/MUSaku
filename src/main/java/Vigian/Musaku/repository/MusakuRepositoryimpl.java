@@ -6,6 +6,7 @@ import Vigian.Musaku.util.DatabaseUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 
@@ -15,7 +16,7 @@ public class MusakuRepositoryimpl implements MusakuRepository{
     public ArrayList<Musaku> getAll() {
         ArrayList<Musaku> result = new ArrayList<>();
 
-        String sql = "SELECT tipe, keterangan, nominal FROM transaksi";
+        String sql = "SELECT tipe, keterangan, nominal, tanggal FROM transaksi";
 
         try (Connection connection = DatabaseUtil.getDataSource().getConnection();
              PreparedStatement statement = connection.prepareStatement(sql);
@@ -36,10 +37,19 @@ public class MusakuRepositoryimpl implements MusakuRepository{
         return result;
     }
 
+    @Override
+    public void getTotal() {
+
+    }
+
 
     @Override
     public void add(Musaku musaku) {
-        String sql = "INSERT INTO transaksi (tipe, keterangan, nominal) VALUES (?, ?, ?)";
+        String sql = """
+                INSERT INTO transaksi 
+                (tipe, keterangan, nominal, tanggal) 
+                VALUES (?, ?, ?, ?)
+                """;
 
         try (Connection connection = DatabaseUtil.getDataSource().getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -47,6 +57,7 @@ public class MusakuRepositoryimpl implements MusakuRepository{
             statement.setString(1, musaku.getTipe());
             statement.setString(2, musaku.getKeterangan());
             statement.setInt(3, musaku.getUang());
+            statement.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
 
             statement.executeUpdate();
 

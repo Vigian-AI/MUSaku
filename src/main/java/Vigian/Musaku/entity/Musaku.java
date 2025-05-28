@@ -4,6 +4,11 @@ public class Musaku {
     private String tipe;
     private String keterangan;
     private Integer Uang;
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
 
 
     public String getTipe() {
@@ -18,15 +23,12 @@ public class Musaku {
         return Uang;
     }
 
-    public Musaku(String tipe, String keterangan, Integer uang) {
+    public Musaku(Integer id,String tipe, String keterangan, Integer uang) {
+        this.id = id;
         this.tipe = tipe;
         this.keterangan = keterangan;
         this.Uang = uang;
     }
 
-    @Override
-    public String toString() {
-        return "type " + tipe +", keterangan " +keterangan+ ", jumlah "+Uang;
-    }
 
 }

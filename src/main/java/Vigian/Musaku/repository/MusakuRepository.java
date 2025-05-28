@@ -10,6 +10,7 @@ public interface MusakuRepository {
 
 
     ArrayList<Musaku> getAll();
+    void getTotal();
 
     void add(Musaku musaku);
 }
